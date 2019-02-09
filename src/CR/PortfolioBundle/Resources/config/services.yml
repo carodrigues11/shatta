@@ -1,0 +1,4 @@
+services:
+#    cr_portfolio.example:
+#        class: CR\PortfolioBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

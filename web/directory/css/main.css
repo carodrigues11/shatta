@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: grey;
+}
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+body {
+  width: 100%;
+  margin: auto;
+  font-family: "DINbek Light";
+  font-size: 20px;
+  color: grey;
+  transition: background-color 0.5s;
+}
+
+
+
+
+  /**
+    VIDEO
+ */
+
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+
+
+
+
+
+}
+body > div.header {
+  width: 100%;
+  display: inline-block;
+  height: 180px;
+  padding-left: 40px;
+  background-color: red;
+}
+body > div.header > .menu {
+  background-color: red;
+}
+body > div.header > .menu > div.panier {
+  background-color: red;
+  display: inline-block;
+}
+body > div.header > .menu > div.nbArticle {
+  background-color: #931969;
+  display: inline-block;
+}
+body > .main {
+  display: inline-block;
+}
+body > .main > .tri {
+  margin-left: 140px;
+}
+body > .main > .tri > .soustitre {
+  margin-bottom: 20px;
+}
+body > .main > .tri > .trierpar > .choix {
+  display: inline-block;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 2px 9px;
+}
+body > .main > .tri > .trierpar > .choix:hover {
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  cursor: pointer;
+}
+body > .main > .col-right {
+  width: 95%;
+  margin: 80px 140px;
+}
+body > .main > .col-right > .titre {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+body > .main > .col-right > .produit {
+  display: inline-block;
+  margin: 20px 10px;
+  vertical-align: top;
+}
+body > .main > .col-right > .produit > .imgProduit {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  vertical-align: top;
+  cursor: pointer;
+}
+body > .main > .col-right > .produit > .contentProduit {
+  height: 140px;
+}
+body > .main > .col-right > .produit > .contentProduit > .nomProduit {
+  font-family: "DINbek Alternate";
+  margin-bottom: 3px;
+  margin-left: 10px;
+}
+body > .main > .col-right > .produit > .contentProduit > .prixProduit {
+  font-size: 15px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+body > .main > .col-right > .produit > .contentProduit > .quantitéProduit {
+  font-size: 15px;
+  margin-left: 15px;
+  display: none;
+}
+body > .main > .col-right > .produit > .contentProduit > .quantitéProduit > input {
+  width: 40px;
+}
+body > .main > .col-right > .produit > .contentProduit > .quantitéProduit > label {
+  padding-left: 10px;
+}
+body > .main > .col-right > .produit > .contentProduit > .btnProduit {
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  padding: 1px 0;
+  display: none;
+}
+body .producteurs .tri {
+  margin-left: 140px;
+  margin-bottom: 40px;
+}
+body .producteurs .tri .soustitre {
+  margin-bottom: 20px;
+}
+body .producteurs .tri .trierpar .choix {
+  display: inline-block;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 2px 9px;
+}
+body .producteurs .tri .trierpar > .choix:hover {
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  cursor: pointer;
+}
+body .producteurs > .content {
+  margin-bottom: 150px;
+}
+body .producteurs > .content > .titre {
+  margin-bottom: 90px;
+  font-family: "DINbek Alternate";
+  font-size: 26px;
+  margin-left: 140px;
+}
+body .producteurs > .content > .producteur {
+  margin: 0 3% 4% 11%;
+  padding: 5px;
+}
+body .producteurs > .content > .producteur > .col-left {
+  display: inline-block;
+  vertical-align: top;
+  width: 355px;
+}
+body .producteurs > .content > .producteur > .col-left > img {
+  width: 350px;
+  height: 300px;
+  overflow: hidden;
+}
+body .producteurs > .content > .producteur > .col-left > .nomFerme {
+  font-family: "DINbek Alternate";
+  font-size: 25px;
+}
+body .producteurs > .content > .producteur > .col-left > .distance {
+  display: inline-block;
+  font-size: 12px;
+  color: #aaaaaa;
+}
+body .producteurs > .content > .producteur > .col-left > .produit {
+  display: inline-block;
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+body .producteurs > .content > .producteur > .col-left > .description {
+  font-size: 15px;
+}
+body .producteurs > .content > .producteur > .col-left > .description > ul {
+  margin-left: 40px;
+}
+body .producteurs > .content > .producteur > .col-left > .description > ul > li {
+  list-style-type: circle;
+}
+body .producteurs > .content > .producteur > .col-left > .btProduit {
+  width: 160px;
+  text-align: center;
+  padding: 3px 5px;
+  font-size: 15px;
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  cursor: pointer;
+  margin-left: 170px;
+  margin-top: 40px;
+  display: none;
+}
+body .producteurs > .content > .producteur > .col-center {
+  display: inline-block;
+  vertical-align: top;
+  width: 306px;
+}
+body .producteurs > .content > .producteur > .col-center > img {
+  width: 148px;
+  height: 148px;
+  overflow: hidden;
+  margin: 1px;
+}
+body .producteurs > .content > .producteur > .col-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 355px;
+  padding-left: 10px;
+}
+body .producteurs > .content > .producteur > .col-right > img {
+  width: 345px;
+  height: 300px;
+  overflow: hidden;
+}
+body .producteurs > .content > .producteur > .col-right > .nomFerme {
+  font-family: "DINbek Alternate";
+  font-size: 25px;
+}
+body .producteurs > .content > .producteur > .col-right > .distance {
+  display: inline-block;
+  font-size: 12px;
+  color: #aaaaaa;
+}
+body .producteurs > .content > .producteur > .col-right > .produit {
+  display: inline-block;
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+body .producteurs > .content > .producteur > .col-right > .description {
+  font-size: 15px;
+}
+body .producteurs > .content > .producteur > .col-right > .description > ul {
+  margin-left: 40px;
+}
+body .producteurs > .content > .producteur > .col-right > .description > ul > li {
+  list-style-type: circle;
+}
+body .producteurs > .content > .producteur > .col-right > .btProduit {
+  width: 160px;
+  text-align: center;
+  padding: 3px 5px;
+  font-size: 15px;
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  cursor: pointer;
+  margin-left: 170px;
+  margin-top: 40px;
+  display: none;
+}
+body .map {
+  width: 100%;
+}
+body .map #map {
+  height: 400px;
+  margin: 50px 20px;
+}
+body .map .tri .trierpar {
+  margin-left: 140px;
+}
+body .map .tri .trierpar .choix {
+  display: inline-block;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 2px 9px;
+}
+body .map .tri .trierpar > .choix:hover {
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  cursor: pointer;
+}
+body .map .tri .trierpar > .checked {
+  background-color: #931969;
+  border: 1px solid #931969;
+  color: white;
+  cursor: pointer;
+}
+body div.contact {
+  text-align: center ;
+  margin-top: 70px;
+  margin-bottom: 150px;
+}
+body div.contact > .champContact > input[type="text"] {
+  border: none;
+  width: 300px;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+body div.contact > .champContact > textarea {
+  border: none;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 20px;
+}
+body div.contact > .champContact input[type="submit"] {
+  cursor: pointer;
+  background-color: #931969;
+  color: white;
+  border: 1px solid #931969;
+  border-radius: 2px;
+  padding: 3px 10px;
+}
+body .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #eeeeee;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+body div.contentNavPanier {
+  width: 100%;
+  padding-left: 40px;
+}
+body .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+body .sidenav a:hover {
+  color: #cccccc;
+}
+body .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+body div.detailNav {
+  display: inline-block;
+  font-size: 15px;
+  padding-left: 25px;
+}
+body div.produitNav img,
+body .nomNav,
+body .suppNav,
+body .produitNav {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 15px;
+  font-size: 13px;
+  padding-left: 5px;
+}
+body div.sousPanierNav {
+  text-align: right;
+  margin: 40px;
+}
+body div.subTotalNav {
+  display: inline-block;
+  padding-right: 40px;
+}
+body div.totauxNav {
+  width: 100%;
+}
+body div.totalNav {
+  display: inline-block;
+}
+body div.btnNav {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #931969;
+  padding: 3px 18px;
+  color: white;
+  border-radius: 2px;
+}
+body td input[type=number] {
+  background-color: #eeeeee;
+  border: none;
+}
+body div.footer {
+  text-align: center;
+  padding-top: 3px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  background-color: #931969;
+}

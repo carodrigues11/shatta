@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+   <style>
+
+
+
+       #compte_a_rebours{
+           margin: 0 400px;
+       }
+
+       div.time{
+           display: inline-block;
+           text-align: center;
+           padding: 20px;
+
+       }
+
+       div.nbJ{
+           font-size: 50px;
+           color:white;
+       }
+
+       div.motJ{
+           font-size: 10px;
+           color: #aacccc;
+       }
+
+
+       .myButton {
+           margin: 20px 10px;
+
+           -moz-box-shadow: 0px 10px 14px -7px #276873;
+           -webkit-box-shadow: 0px 10px 14px -7px #276873;
+           box-shadow: 0px 10px 14px -7px #276873;
+           background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+           background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+           background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+           background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+           background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+           background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+           filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+           background-color:#599bb3;
+           -moz-border-radius:8px;
+           -webkit-border-radius:8px;
+           border-radius:8px;
+           display:inline-block;
+           cursor:pointer;
+           color:#ffffff;
+           font-family:Arial;
+           font-size:20px;
+           font-weight:bold;
+           padding:13px 32px;
+           text-decoration:none;
+           text-shadow:0px 1px 0px #3d768a;
+       }
+       .myButton:hover {
+           background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+           background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+           background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+           background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+           background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+           background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+           filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+           background-color:#408c99;
+       }
+       .myButton:active {
+           position:relative;
+           top:1px;
+       }
+
+
+
+       #myVideo {
+           position: fixed;
+           right: 0;
+           bottom: 0;
+           min-width: 100%;
+           min-height: 100%;
+           z-index: -1;
+       }
+
+       .content {
+           position: fixed;
+           bottom: 0;
+           background: rgba(0, 0, 0, 0.5);
+           color: #f1f1f1;
+           width: 100%;
+           padding: 20px;
+       }
+
+       #myBtn {
+           width: 150px;
+           font-size: 18px;
+           padding: 10px;
+           border: none;
+           background: #000;
+           color: #fff;
+           cursor: pointer;
+           margin-right: 20px;
+       }
+
+       #myBtn:hover {
+           background: #ddd;
+           color: black;
+       }
+
+
+       div.rs{
+           position: fixed;
+           bottom: 0;
+           right: 0;
+           margin: 15px 50px;
+       }
+
+   </style>
+
+
+
+    </head>
+    <body style="text-align: center;">
+
+
+    <video autoplay loop id="myVideo">
+        <source src="{{ asset('directory/img/video.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+
+    <div class="rs">
+
+        <button id="myBtn" onclick="myFunction()">Pause</button>
+
+        <a href="https://www.facebook.com/shattaldn"><img src="{{ asset('directory/img/fb.png') }}" style="width: 30px"></a>
+        <a href="https://www.instagram.com/shattalondon/"><img src="{{ asset('directory/img/insta_b.png') }}" style="width: 30px"></a>
+    </div>
+
+
+    <div id="message_notice">
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+                {{ flashMessage }}
+        {% endfor %}
+    </div>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+
+        <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+
+
+
+    <script>
+
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+
+        function myFunction() {
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+            } else {
+                video.pause();
+                btn.innerHTML = "Play";
+            }
+        }
+
+
+
+        function compte_a_rebours()
+        {
+            var compte_a_rebours = document.getElementById("compte_a_rebours");
+            var date_actuelle = new Date();
+            var date_evenement = new Date("Feb 14 22:00:00 2019");
+            var total_secondes = (date_evenement - date_actuelle) / 1000;
+
+            var prefixe = "Compte à rebours terminé dans ";
+            if (total_secondes < 0)
+            {
+                prefixe = "Compte à rebours terminé il y a "; // On modifie le préfixe si la différence est négatif
+                total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
+            }
+
+            if (total_secondes > 0)
+            {
+                var jours = Math.floor(total_secondes / (60 * 60 * 24));
+                var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
+                minutes = Math.floor((total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
+                secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
+
+                var et = "et";
+                var mot_jour = "days";
+                var mot_heure = "hours";
+                var mot_minute = "minutes";
+                var mot_seconde = "seconds";
+
+                if (jours == 0)
+                {
+                    jours = '';
+                    mot_jour = '';
+                }
+                else if (jours == 1)
+                {
+                    mot_jour = "day";
+                }
+
+                if (heures == 0)
+                {
+                    heures = '';
+                    mot_heure = '';
+                }
+                else if (heures == 1)
+                {
+                    mot_heure = "hour";
+                }
+
+                if (minutes == 0)
+                {
+                    minutes = '';
+                    mot_minute = '';
+                }
+                else if (minutes == 1)
+                {
+                    mot_minute = "minute";
+                }
+
+                if (secondes == 0)
+                {
+                    secondes = '';
+                    mot_seconde = '';
+                    et = '';
+                }
+                else if (secondes == 1)
+                {
+                    mot_seconde = "second";
+                }
+
+                if (minutes == 0 && heures == 0 && jours == 0)
+                {
+                    et = "";
+                }
+
+                compte_a_rebours.innerHTML = '<div class="time"><div class="nbJ">'+ jours + '</div> <div class="motJ">' + mot_jour + '</div></div> <div class="time"> <div class="nbJ">' + heures + ' </div><div class="motJ">' + mot_heure + '</div></div> <div class="time"><div class="nbJ"> ' + minutes + ' </div><div class="motJ">' + mot_minute + '</div></div> <div class="time"> <div class="nbJ"> ' + secondes + '</div><div class="motJ"> ' + mot_seconde+'</div></div>';
+            }
+            else
+            {
+                compte_a_rebours.innerHTML = 'Compte à rebours terminé.';
+            }
+
+            var actualisation = setTimeout("compte_a_rebours();", 1000);
+        }
+        compte_a_rebours();
+    </script>
+
+
+
+
+
+
+
+    </body>
+</html>

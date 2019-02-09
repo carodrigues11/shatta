@@ -1,0 +1,23 @@
+cr_portfolio_homepage:
+    path:     /
+    defaults: { _controller: CRPortfolioBundle:Default:index }
+
+add:
+  path: /add
+  defaults: { _controller: CRShopBundle:Default:add }
+
+portfolio:
+    path:     /portfolio
+    defaults: { _controller: CRPortfolioBundle:Default:portfolio }
+
+mesphotos:
+    path:     /mesphotos
+    defaults: { _controller: CRPortfolioBundle:Default:photos }
+
+infos:
+    path:     /infos
+    defaults: { _controller: CRPortfolioBundle:Default:infos }
+
+contact:
+    path:     /contact
+    defaults: { _controller: CRPortfolioBundle:Default:contact }

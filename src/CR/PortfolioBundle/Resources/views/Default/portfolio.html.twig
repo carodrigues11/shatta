@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    Portfolio
+
+
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+           <p>Vous êtes bien connecté!</p>
+        {% else %}
+            <p>Connectez-vous</p>
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </div>
+
+{% endblock %}

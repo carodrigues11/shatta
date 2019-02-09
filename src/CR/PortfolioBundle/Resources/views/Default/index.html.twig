@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div id="compte_a_rebours"  style="text-align: center; margin-top: 30%"><noscript>Fin de l'évènement le 14/02/19.</noscript></div>
+
+
+    <div class="btns" style="text-align: center">
+        <a href="#" class="myButton"  data-toggle="modal" data-target="#myModal">Register</a>
+        <a href="#" class="myButton"  data-toggle="modal" data-target="#myModal2">Table</a>
+    </div>
+
+
+    <logo><img src="{{ asset('directory/img/Shatta2.png') }}" style="width: 300px; position: fixed; left: 0; top: 0"></logo>
+
+
+    <!-- The Modal - REGISTER -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 600px">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Register</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                   {% for user in users %}
+                        {{ user.name }}
+                    {% endfor %}
+
+                    {{ test }}
+
+                    <form action="#">
+                        <br>
+                        <input class="frm" type="number" name="quantity" min="1" max="10" value="0"> <p style="color: #444; display: inline-block">place(s)</p>
+                        <br>
+
+                        <input class="frm" type="text" name="firstname" placeholder="Name">
+                        <br>
+                        <div style="display: inline-block">
+                            <input class="radio" style="display: inline-block" type="radio" name="gender" value="male"> Male<br>
+                            <input class="radio" style="display: inline-block" type="radio" name="gender" value="female"> Female<br>
+                        </div>
+                        <br>
+                        <input class="frm" type="email" placeholder="Email">
+                        <br>
+                        <input class="frm" type="tel" name="usrtel" placeholder="Tel">
+                        <br>
+                        <textarea class="frm" rows="4" cols="50" placeholder="Comment"></textarea>
+
+                        <br><br>
+                        <input type="submit" value="Send"  class="myButton">
+                    </form>
+
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="text-align: center; color: #bbb; padding-left: 40px; ">
+                    <p>The establishment reserves the right of admission.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- The Modal - TABLE -->
+    <div class="modal" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Table</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <img src="{{ asset('directory/img/table.jpg') }}" style="width: 450px">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
